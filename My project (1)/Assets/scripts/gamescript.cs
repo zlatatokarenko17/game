@@ -20,7 +20,7 @@ public class gamescript : MonoBehaviour
     }
     void questionGenerate()
     {
-        if (qList.Count>0)
+        if (qList.Count > 0)
         {
             randQ = Random.Range(0, qList.Count);
             crntQ = qList[randQ] as QuestionList;
@@ -46,12 +46,12 @@ public class gamescript : MonoBehaviour
         for (int i = 0; i < answerBttns.Length; i++) answerBttns[i].interactable = false;
         int a = 0;
 
-        while(a<answerBttns.Length)
+        while (a < answerBttns.Length)
         {
-           if (!answerBttns[a].gameObject.activeSelf) answerBttns[a].gameObject.SetActive(true);
-           else answerBttns[a].gameObject.GetComponent<Animator>().SetTrigger("In");
-           a++;
-           yield return new WaitForSeconds(1);
+            if (!answerBttns[a].gameObject.activeSelf) answerBttns[a].gameObject.SetActive(true);
+            else answerBttns[a].gameObject.GetComponent<Animator>().SetTrigger("In");
+            a++;
+            yield return new WaitForSeconds(1);
         }
         for (int i = 0; i < answerBttns.Length; i++) answerBttns[i].interactable = true;
         yield break;
@@ -70,3 +70,6 @@ public class QuestionList
     public string question;
     public string[] answers = new string[3];
 }
+
+
+
