@@ -14,12 +14,16 @@ public class gamescript : MonoBehaviour
     public Text TFText; 
     List<object> qList;
     QuestionList crntQ;
+    public GameObject Cnopochka;
     int randQ;
 
     public void OnClickPlay()
     {
+        
         qList = new List<object>(questions);
         questionGenerate();
+       Cnopochka.gameObject.SetActive(false);
+        
     }
     void questionGenerate()
     {
@@ -74,6 +78,7 @@ public class gamescript : MonoBehaviour
             TFText.text = "Правильный ответ! :)";
             yield return new WaitForSeconds(1.5f);
             TFIcon.gameObject.GetComponent<Animator>().SetTrigger("Out");
+            TFIcon.gameObject.SetActive(false);
             qList.RemoveAt(randQ);
             questionGenerate();
             yield break;
@@ -84,6 +89,7 @@ public class gamescript : MonoBehaviour
             TFText.text = "Неправильный ответ! :(";
             yield return new WaitForSeconds(1.5f);
             TFIcon.gameObject.GetComponent<Animator>().SetTrigger("Out");
+            TFIcon.gameObject.SetActive(false);
             questionGenerate();
             yield break;
         }
