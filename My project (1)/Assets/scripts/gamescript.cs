@@ -67,7 +67,8 @@ public class gamescript : MonoBehaviour
     IEnumerator trueOrFalse(bool check)
     {
         for (int i = 0; i < answerBttns.Length; i++) answerBttns[i].interactable = false;
-        for (int i = 0; i < answerBttns.Length; i++) answerBttns[i].gameObject.GetComponent<Animator>().SetTrigger("Out");
+        for (int i = 0; i < answerBttns.Length; i++) answerBttns[i].gameObject.SetActive(false);
+        //GetComponent<Animator>().SetTrigger("Out");
         qText.gameObject.SetActive(false);
         yield return new WaitForSeconds(0.5f);
         if (!TFIcon.gameObject.activeSelf) TFIcon.gameObject.SetActive(true);
