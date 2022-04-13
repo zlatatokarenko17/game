@@ -15,6 +15,7 @@ public class gamescript : MonoBehaviour
     List<object> qList;
     QuestionList crntQ;
     public GameObject Cnopochka;
+    public GameObject Final;
     int randQ;
 
     public void OnClickPlay()
@@ -45,7 +46,8 @@ public class gamescript : MonoBehaviour
         }
         else
         {
-            print("Поздравляем! Теперь Вы знаете строение скелета человека! :D");
+            Final.gameObject.SetActive(true);
+            Final.gameObject.GetComponent<Animator>().SetTrigger("In");
         }
     }
     IEnumerator animBttns()
