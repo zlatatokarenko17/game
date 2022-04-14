@@ -17,13 +17,11 @@ public class gamescript : MonoBehaviour
     public GameObject Cnopochka;
     public GameObject Final;
     public GameObject Obychenia;
-    public GameObject igra;
     public GameObject GameObject;
     int randQ;
     public void OnClickPlay1()
     {
         Obychenia.gameObject.SetActive(false);
-        igra.gameObject.SetActive(true);
         GameObject.gameObject.SetActive(true);
     }
         public void OnClickPlay()
