@@ -18,11 +18,21 @@ public class gamescript : MonoBehaviour
     public GameObject Final;
     public GameObject Obychenia;
     public GameObject GameObject;
+    public GameObject Logo;
+    public GameObject Mainbutton;
+    public GameObject Game;
     int randQ;
+
+    public void OnClickPlay2()
+    {
+        GameObject.gameObject.SetActive(true);
+        Logo.gameObject.SetActive(false);
+        Mainbutton.gameObject.SetActive(false);
+}
     public void OnClickPlay1()
     {
         Obychenia.gameObject.SetActive(false);
-        GameObject.gameObject.SetActive(true);
+        Game.gameObject.SetActive(true);
     }
         public void OnClickPlay()
     {
