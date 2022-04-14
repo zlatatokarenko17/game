@@ -21,6 +21,8 @@ public class gamescript : MonoBehaviour
     public GameObject Logo;
     public GameObject Mainbutton;
     public GameObject Game;
+    public GameObject Background1;
+    public GameObject Background2;
     int randQ;
 
     public void OnClickPlay2()
@@ -40,7 +42,8 @@ public class gamescript : MonoBehaviour
         qList = new List<object>(questions);
         questionGenerate();
        Cnopochka.gameObject.SetActive(false);
-        
+        Background1.gameObject.SetActive(false);
+        Background2.gameObject.SetActive(true);
     }
     void questionGenerate()
     {
