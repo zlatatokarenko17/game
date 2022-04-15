@@ -23,6 +23,7 @@ public class gamescript : MonoBehaviour
     public GameObject Game;
     public GameObject Background1;
     public GameObject Background2;
+    public GameObject Background3;
     int randQ;
 
     public void OnClickPlay2()
@@ -65,6 +66,8 @@ public class gamescript : MonoBehaviour
         }
         else
         {
+            Background2.gameObject.SetActive(false);
+            Background3.gameObject.SetActive(true);
             Final.gameObject.SetActive(true);
             Final.gameObject.GetComponent<Animator>().SetTrigger("In");
         }
@@ -90,6 +93,7 @@ public class gamescript : MonoBehaviour
         for (int i = 0; i < answerBttns.Length; i++) answerBttns[i].interactable = false;
         for (int i = 0; i < answerBttns.Length; i++) answerBttns[i].gameObject.SetActive(false);
         //GetComponent<Animator>().SetTrigger("Out");
+        Background2.gameObject.SetActive(false);
         qText.gameObject.SetActive(false);
         yield return new WaitForSeconds(0.5f);
         if (!TFIcon.gameObject.activeSelf) TFIcon.gameObject.SetActive(true);
@@ -102,6 +106,7 @@ public class gamescript : MonoBehaviour
             TFIcon.gameObject.GetComponent<Animator>().SetTrigger("Out");
             TFIcon.gameObject.SetActive(false);
             qList.RemoveAt(randQ);
+            Background2.gameObject.SetActive(true);
             questionGenerate();
             yield break;
         }
@@ -112,6 +117,7 @@ public class gamescript : MonoBehaviour
             yield return new WaitForSeconds(1.5f);
             TFIcon.gameObject.GetComponent<Animator>().SetTrigger("Out");
             TFIcon.gameObject.SetActive(false);
+            Background2.gameObject.SetActive(true);
             questionGenerate();
             yield break;
         }
